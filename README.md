@@ -16,16 +16,16 @@ I would, of course, recommend using the awesome version.
 ### Install for your own user only
 The awesome version includes a lot of great plugins, configurations and color schemes that make Vim a lot better. To install it simply do following from your terminal:
 
-	git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-	sh ~/.vim_runtime/install_awesome_vimrc.sh
+	git clone --depth=1 https://github.com/amix/vimrc.git ~/rcfiles/vimrc
+	sh ~/rcfiles/vimrc/install_awesome_vimrc.sh
 	
 ### Install for multiple users
 To install for multiple users, the repository needs to be cloned to a location accessible for all the intended users.
 
 	git clone --depth=1 https://github.com/amix/vimrc.git /opt/vim_runtime
-	sh ~/.vim_runtime/install_awesome_parameterized.sh /opt/vim_runtime user0 user1 user2
+	sh ~/rcfiles/vimrc/install_awesome_parameterized.sh /opt/vim_runtime user0 user1 user2
 	# to install for all users with home directories
-	sh ~/.vim_runtime/install_awesome_parameterized.sh /opt/vim_runtime --all
+	sh ~/rcfiles/vimrc/install_awesome_parameterized.sh /opt/vim_runtime --all
 	
 Naturally, `/opt/vim_runtime` can be any directory, as long as all the users specified have read access.
 
@@ -44,8 +44,8 @@ The basic version is just one file and no plugins. Just copy [basic.vim](https:/
 
 The basic version is useful to install on remote servers where you don't need many plugins, and you don't do many edits.
 
-	git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-	sh ~/.vim_runtime/install_basic_vimrc.sh
+	git clone --depth=1 https://github.com/amix/vimrc.git ~/rcfiles/vimrc
+	sh ~/rcfiles/vimrc/install_basic_vimrc.sh
 
 
 ## How to install on Windows?
@@ -62,7 +62,7 @@ If you have vim aliased as `vi` instead of `vim`, make sure to either alias it: 
 
 Just do a git rebase!
 
-    cd ~/.vim_runtime
+    cd ~/rcfiles/vimrc
     git pull --rebase
 
 
@@ -128,15 +128,15 @@ I recommend reading the docs of these plugins to understand them better. Each pl
 
 ## How to include your own stuff?
 
-After you have installed the setup, you can create **~/.vim_runtime/my_configs.vim** to fill in any configurations that are important for you. For instance, my **my_configs.vim** looks like this:
+After you have installed the setup, you can create **~/rcfiles/vimrc/my_configs.vim** to fill in any configurations that are important for you. For instance, my **my_configs.vim** looks like this:
 
-	~/.vim_runtime (master)> cat my_configs.vim
+	~/rcfiles/vimrc (master)> cat my_configs.vim
 	map <leader>ct :cd ~/Desktop/Todoist/todoist<cr>
 	map <leader>cw :cd ~/Desktop/Wedoist/wedoist<cr> 
 
 You can also install your plugins, for instance, via pathogen you can install [vim-rails](https://github.com/tpope/vim-rails):
 
-	cd ~/.vim_runtime
+	cd ~/rcfiles/vimrc
 	git clone git://github.com/tpope/vim-rails.git my_plugins/vim-rails
 
 
@@ -326,5 +326,5 @@ Cope mappings:
 
 ## How to uninstall
 Just do following:
-* Remove `~/.vim_runtime`
+* Remove `~/rcfiles/vimrc`
 * Remove any lines that reference `.vim_runtime` in your `~/.vimrc`
